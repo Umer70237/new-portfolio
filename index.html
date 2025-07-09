@@ -3,93 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Rao Umar Farooq - Portfolio</title>
   <style>
-    *{
-      margin: 0%;
-      padding: 0%;
+    * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
-   
- body {
+
+    body {
       font-family: Arial, Helvetica, sans-serif;
     }
-    nav{
-      display: flex;
-      gap: 40px;
-      padding: 15px 0;
-      justify-content: center;
-       background-color:rgb(30, 128, 193);
-      
-    }
-    nav a{
-      
-      text-decoration: none;
-      font-size: 25px;
-      color: rgb(255, 255, 255);
-    
-    }
-    nav a:hover{
-      color: rgb(211, 222, 232);
+
+    header {
+      background-color: white;
     }
 
-    img{
-      height: 80px;
-      width: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 20px;
-        
-      
-    }
-    section{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px 0;
-    }
-    section h2{
-      
-      color: rgb(14, 116, 199);
-      font-family:Arial, Helvetica, sans-serif;
-      padding: 10px;
-      font-size: 28px;
-    }
-    .hero{
-       background-color: #f5f5f5;
-      display: flex;
-      flex-direction: column;
-      padding: 50px 0;
-       background: linear-gradient(to right, #f5f5f5, #e8f0ff);
+   
+   img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
 
-      
-      
-    }
-    .hero h1{
-       color: rgb(30, 128, 193);
-      padding: 10px 0;
-      font-size: 36px;
-      font-weight: bold;
-    }
-    .my-info{
-      padding: 5px 0;
-    color: #444;
-    font-size: 18px;
-    }
+section.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+  text-align: center;
+}
 
-    .hero button{
-      padding: 10px 20px;
-       background-color: rgb(30, 128, 193);
-       border: transparent;
-       border-radius: 6px;
-       color:white;
-       font-size: 20px;
-       margin-top: 20px;
-       cursor: pointer;
-    }
-    .hero button:hover{
-      background-color: rgb(20, 101, 155);
-    }
+section.profile h2 {
+  color: rgb(14, 116, 199);
+  font-size: 28px;
+  padding: 10px;
+}
+
+/* ✅ Responsive Styling for Small Screens */
+@media (max-width: 600px) {
+  section.profile {
+    flex-direction: column;
+  }
+
+  img {
+    margin-right: 0;
+    margin-bottom: 10px;
+    height: 70px;
+    width: 70px;
+  }
+
+  section.profile h2 {
+    font-size: 22px;
+  }
+}
+
+
+ /* === Navbar Styling === */
+.navbar {
+  background-color: rgb(30, 128, 193);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Hamburger button */
+.hamburger {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.nav-links a:hover {
+  color: rgb(211, 222, 232);
+}
+
+/* ==== Responsive Styling ==== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(30, 128, 193);
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 15px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .hero {
+  text-align: center;
+  padding: 100px 0px;
+  background-color: #f5f5f5;
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: rgb(30, 128, 193);
+  margin-bottom: 10px;
+}
+
+.intro-text {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 25px;
+}
 
 .slogan {
   font-size: 28px;
@@ -98,7 +182,6 @@
   color: #1f1f1f;
   margin-bottom: 30px;
   letter-spacing: 0.5px;
-  padding: 20px 0 0 0;
 }
 
 .slogan span {
@@ -106,35 +189,402 @@
   font-weight: bold;
   font-style: normal;
 }
-  </style>
 
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: rgb(30, 128, 193);
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgb(20, 108, 173);
+}
+
+
+
+/* ==== Skills Section Modern Styling ==== */
+.skills-section {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #d0d1d9, #636d79);
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #000000;
+  letter-spacing: 1px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  border-radius: 20px;
+  width: 140px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.skill-card p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.skill-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.projects-section {
+  padding: 80px 20px;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #1f2937;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.project-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  font-size: 22px;
+  color: rgb(30, 128, 193);
+  margin: 20px 0 10px;
+}
+
+.project-card p {
+  padding: 0 15px;
+  font-size: 16px;
+  color: #444;
+}
+
+.project-card span {
+  display: block;
+  margin: 10px 15px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.btn-project {
+  margin: 0 15px;
+  padding: 10px 15px;
+  background-color: rgb(30, 128, 193);
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-project:hover {
+  background-color: rgb(20, 108, 173);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+.about-section {
+  background: linear-gradient(to right, #e0f2fe, #f0f9ff);
+  padding: 100px 20px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.about-image img {
+  width: 260px;
+  height: 260px;
+  border-radius: 20px; /* softer than circle */
+  object-fit: cover;
+  background: linear-gradient(135deg, #1e80c1, #6ee7b7);
+  padding: 8px; /* for border-like effect */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-image img:hover {
+  transform: rotate(1deg) scale(1.03);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  color: rgb(30, 128, 193);
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.btn-about {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: rgb(30, 128, 193);
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-about:hover {
+  background-color: rgb(20, 108, 173);
+}
+
+
+
+
+
+  </style>
 </head>
 <body>
+
   <header>
-    <section>
-    <img src="ok.jpg" alt="my-img">
-    <h2>RAO UMAR FAROOQ</h2>
     
+
+    <!-- 👤 Profile Section -->
+    <section class="profile">
+      <img src="ok.jpg" alt="my-img">
+      <h2>RAO UMAR FAROOQ</h2>
     </section>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Skills</a>
-    <a href="#">Projects</a>
-    <a href="#">About me</a>
-    <a href="#">Message me</a>
 
-  </nav>
-</header>
+   <nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Menu</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Skills</a>
+      <a href="#">Projects</a>
+      <a href="#">About me</a>
+      <a href="#">Message me</a>
+    </div>
+  </div>
+</nav>
 
-<section class="hero">
+  </header>
 
- 
-<h1>Hi, I'm a Front-End Web Developer 👨‍💻</h1>
-   <p class="my-info"> I make modern, responsive, and SEO-friendly websites.</p>
-
-    <p class="slogan">“Where design meets <span>code</span> — I make it happen.”</p>
-   <button>view my work</button>
+  <section class="hero">
+  <h1>Hi, I’m a Front-End Web Developer 👨‍💻</h1>
+  <p class="intro-text">
+    I make modern, responsive, and SEO-friendly websites.
+  </p>
+  <p class="slogan">“Where design meets <span>code</span> — I make it happen.”</p>
+  <a href="#projects" class="btn">View My Work</a>
 </section>
-  
+
+
+
+<!-- ===== Skills Section ===== -->
+<section class="skills-section">
+  <h2>My Skills</h2>
+  <div class="skills-container">
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+      <p>HTML</p>
+    </div>
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+      <p>CSS</p>
+    </div>
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+      <p>JavaScript</p>
+    </div>
+   <div class="skill-card">
+  <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS">
+  <p>Tailwind</p>
+</div>
+
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+      <p>React</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Projects Section ===== -->
+<section class="projects-section">
+  <h2>My Projects</h2>
+  <div class="projects-container">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x180" alt="Project 1">
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio built with HTML, CSS, and JavaScript.</p>
+      <span>HTML | CSS | JavaScript</span>
+      <a href="#" class="btn-project">View Project</a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x180" alt="Project 2">
+      <h3>Landing Page</h3>
+      <p>A responsive landing page for a startup business.</p>
+      <span>HTML | Tailwind CSS</span>
+      <a href="#" class="btn-project">View Project</a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x180" alt="Project 3">
+      <h3>Weather App</h3>
+      <p>Live weather app using API data and user location.</p>
+      <span>HTML | CSS | JavaScript</span>
+      <a href="#" class="btn-project">View Project</a>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x180" alt="Project 4">
+      <h3>React To-Do List</h3>
+      <p>A clean and simple task manager built in React.</p>
+      <span>React | CSS</span>
+      <a href="#" class="btn-project">View Project</a>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x180" alt="Project 5">
+      <h3>Blog Website</h3>
+      <p>A static blog template with smooth scrolling and sections.</p>
+      <span>HTML | CSS | JavaScript</span>
+      <a href="#" class="btn-project">View Project</a>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x180" alt="Project 6">
+      <h3>Responsive Navbar</h3>
+      <p>A responsive navigation bar with dropdown and animations.</p>
+      <span>HTML | Tailwind | JavaScript</span>
+      <a href="#" class="btn-project">View Project</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- ===== About Me Section ===== -->
+<section class="about-section">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="ok.jpg" alt="Rao Umar Farooq">
+    </div>
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I'm Rao Umar Farooq, a passionate Front-End Web Developer with a strong focus on building clean, responsive, and user-friendly websites. I enjoy transforming ideas into real-world applications using modern web technologies.
+      </p>
+      <p>
+        I'm always excited to learn new skills, collaborate on creative projects, and deliver impactful digital experiences.
+      </p>
+      <a href="#message" class="btn-about">Let's Connect</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.getElementById("nav-links");
+    navLinks.classList.toggle("show");
+  }
+</script>
+
 </body>
 </html>
